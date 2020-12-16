@@ -1,13 +1,14 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    
     <OutputType>Exe</OutputType>
     <TargetFramework>net5.0</TargetFramework>
-    
+  </PropertyGroup>
+  
+  <PropertyGroup>
     <PackAsTool>true</PackAsTool>
     <ToolCommandName>efp</ToolCommandName>
-    
+    <Version>1.0</Version>
   </PropertyGroup>
 
   <ItemGroup>
@@ -18,16 +19,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Update="Properties\Resources.Designer.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
-    </None>
-    <None Update="Properties\Resources.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-    </None>
-  </ItemGroup>
-
-  <ItemGroup>
     <Service Include="{508349b6-6b84-4df5-91f0-309beebad82d}" />
   </ItemGroup>
 
@@ -37,34 +28,19 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.Designer.tt</DependentUpon>
     </Compile>
+    <None Update="Properties\Resources.ttinclude">
+      <DependentUpon>Resources.resx</DependentUpon>
+    </None>
+    <None Update="Properties\Resources.Designer.tt">
+      <DependentUpon>Resources.resx</DependentUpon>
+    </None>
   </ItemGroup>
-  
+
   <ItemGroup>
     <None Update="Properties\Resources.Designer.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </None>
-    <None Update="Properties\Resources.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>Resources.cs</LastGenOutput>
-    </None>
-  </ItemGroup>
-
-  <ItemGroup>
-    <Service Include="{508349b6-6b84-4df5-91f0-309beebad82d}" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Compile Update="Properties\Resources.cs">
-      <DesignTime>True</DesignTime>
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.tt</DependentUpon>
-    </Compile>
-    <Compile Update="Properties\Resources.Designer.cs">
-      <DesignTime>True</DesignTime>
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.Designer.tt</DependentUpon>
-    </Compile>
   </ItemGroup>
 
 </Project>
