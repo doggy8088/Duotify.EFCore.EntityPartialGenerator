@@ -31,7 +31,7 @@ namespace Duotify.EFCore.EntityPartialGenerator
             {
                 logger.LogTrace(Resources.WorkerStarted(DateTimeOffset.Now));
 
-                var runner = new CommandRunner("efp", "\nUsage: efp generate\n");
+                var runner = new CommandRunner("efp", "\nUsage: efp generate -c ContosoUniversityContext -v -o Models\n");
 
                 runner.SubCommand("list", "Lists available DbContext types.", c =>
                 {

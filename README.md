@@ -27,7 +27,7 @@ dotnet tool install -g Duotify.EFCore.EntityPartialGenerator
 2. Generating all the required "buddy class" for the entity model class.
 
     ```sh
-    efp generate
+    efp generate -c ContosoUniversityContext -o Models
     ```
 
     > This command will build existing project first. Only buildable project can generate partial classes.
@@ -35,13 +35,13 @@ dotnet tool install -g Duotify.EFCore.EntityPartialGenerator
     Show generating files 
 
     ```sh
-    efp generate -v
+    efp generate -c ContosoUniversityContext -v -o Models
     ```
 
     Overwrite existing partial class
 
     ```sh
-    efp generate -v -f
+    efp generate -c ContosoUniversityContext -v -o Models -f
     ```
 
 ## Build & Publish
@@ -53,6 +53,6 @@ dotnet tool install -g Duotify.EFCore.EntityPartialGenerator
     ```sh
     dotnet build -c Release
     dotnet pack -c Release
-    dotnet nuget push bin\Release\Duotify.EFCore.EntityPartialGenerator.1.1.2.nupkg --api-key YourApiKeyFromNuGetOrg --source https://api.nuget.org/v3/index.json
+    dotnet nuget push bin\Release\Duotify.EFCore.EntityPartialGenerator.1.1.3.nupkg --api-key YourApiKeyFromNuGetOrg --source https://api.nuget.org/v3/index.json
     ```
 
