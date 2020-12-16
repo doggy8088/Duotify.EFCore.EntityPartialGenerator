@@ -31,9 +31,9 @@ namespace Duotify.EFCore.EntityPartialGenerator
             {
                 logger.LogTrace(Resources.WorkerStarted(DateTimeOffset.Now));
 
-                var runner = new CommandRunner("dotnet genmodelmetadatatype", "GenModelMetadataType Command Line Tools");
+                var runner = new CommandRunner("efp", "\nUsage: efp generate\n");
 
-                runner.SubCommand("list", "show dbContext type list ", c =>
+                runner.SubCommand("list", "Lists available DbContext types.", c =>
                 {
                     c.Option("project", "project", "p", Resources.ProjectOptionDescription);
                     c.OnRun((namedArgs) =>
@@ -55,7 +55,7 @@ namespace Duotify.EFCore.EntityPartialGenerator
                     });
                 });
 
-                runner.SubCommand("generate", "generate partial code ", c =>
+                runner.SubCommand("generate", "Generate a set of \"buddy class\" for all entity types in a DbContext", c =>
                 {
                     c.Option("output", "output-dir", "o", Resources.OutputOptionDescription);
                     c.Option("project", "project", "p", Resources.ProjectOptionDescription);
