@@ -53,6 +53,6 @@ dotnet tool install -g Duotify.EFCore.EntityPartialGenerator
     ```sh
     dotnet build -c Release
     dotnet pack -c Release
-    dotnet nuget push bin\Release\Duotify.EFCore.EntityPartialGenerator.1.1.0.nupkg --api-key YourApiKeyFromNuGetOrg --source https://api.nuget.org/v3/index.json
+    dotnet nuget push bin\Release\Duotify.EFCore.EntityPartialGenerator.1.1.1.nupkg --api-key YourApiKeyFromNuGetOrg --source https://api.nuget.org/v3/index.json
     ```
 
