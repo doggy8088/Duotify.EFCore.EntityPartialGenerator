@@ -46,13 +46,13 @@ dotnet tool install -g Duotify.EFCore.EntityPartialGenerator
 
 ## Build & Publish
 
-1. Change `<PackageVersion>` property in `*.csproj` file
+1. Change `<PackageVersion>` and `<Version>` property in `*.csproj` file
 
 2. Build & Pack & Publish
 
     ```sh
     dotnet build -c Release
     dotnet pack -c Release
-    dotnet nuget push bin\Release\Duotify.EFCore.EntityPartialGenerator.1.1.1.nupkg --api-key YourApiKeyFromNuGetOrg --source https://api.nuget.org/v3/index.json
+    dotnet nuget push bin\Release\Duotify.EFCore.EntityPartialGenerator.1.1.2.nupkg --api-key YourApiKeyFromNuGetOrg --source https://api.nuget.org/v3/index.json
     ```
 
