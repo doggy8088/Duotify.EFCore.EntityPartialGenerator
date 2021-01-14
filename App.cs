@@ -231,7 +231,7 @@ namespace Duotify.EFCore.EntityPartialGenerator
             }
 
             return dbContextType.GetProperties()
-                .Where(prop => CheckIfDbSetGenericType(prop.PropertyType))
+                .Where(prop => prop.GetGetMethod().IsVirtual && CheckIfDbSetGenericType(prop.PropertyType))
                 .Select(type => type.PropertyType.GetGenericArguments()[0]);
         }
 
