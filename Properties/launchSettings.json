@@ -1,0 +1,9 @@
+{
+  "profiles": {
+    "Duotify.EFCore.EntityPartialGenerator": {
+      "commandName": "Project",
+      "commandLineArgs": "list",
+      "workingDirectory": "G:\\Projects\\api1"
+    }
+  }
+}
