@@ -57,6 +57,14 @@ namespace Duotify.EFCore.EntityPartialGenerator
             var efTargetsPath = Path.Combine(
                 buildExtensionsDir,
                 Path.GetFileName(file) + ".EntityFrameworkCore.targets");
+            using (var input = typeof(Resources).Assembly.GetManifestResourceStream(
+                "Duotify.EFCore.EntityPartialGenerator.Resources.EntityFrameworkCore.targets")!)
+            using (var output = File.OpenWrite(efTargetsPath))
+            {
+                // NB: Copy always in case it changes
+                input.CopyTo(output);
+            }
+
 
             IDictionary<string, string> metadata;
             var metadataFile = Path.GetTempFileName();

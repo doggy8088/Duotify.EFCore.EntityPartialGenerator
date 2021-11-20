@@ -35,13 +35,13 @@ dotnet tool install -g Duotify.EFCore.EntityPartialGenerator
     Show generating files 
 
     ```sh
-    efp generate -c ContosoUniversityContext -v -o Models
+    efp generate -c ContosoUniversityContext -o Models -v
     ```
 
     Overwrite existing partial class
 
     ```sh
-    efp generate -c ContosoUniversityContext -v -o Models -f
+    efp generate -c ContosoUniversityContext -o Models -v -f
     ```
 
 ## Build & Publish
@@ -52,6 +52,6 @@ dotnet tool install -g Duotify.EFCore.EntityPartialGenerator
 
     ```sh
     dotnet pack -c Release
-    dotnet nuget push bin\Release\Duotify.EFCore.EntityPartialGenerator.1.2.1.nupkg --api-key YourApiKeyFromNuGetOrg --source https://api.nuget.org/v3/index.json
+    dotnet nuget push bin\Release\Duotify.EFCore.EntityPartialGenerator.1.3.0.nupkg --api-key YourApiKeyFromNuGetOrg --source https://api.nuget.org/v3/index.json
     ```
 
