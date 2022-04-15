@@ -18,13 +18,13 @@ dotnet tool install -g Duotify.EFCore.EntityPartialGenerator
 
     > `efp` is stands for **Entity Framework Partial class generator**.
 
-1. List all the DbContext class in the project
+2. List all the DbContext class in the project
 
     ```sh
     efp list
     ```
 
-2. Generating all the required "buddy class" for the entity model class.
+3. Generating all the required "buddy class" for the entity model class.
 
     ```sh
     efp generate -c ContosoUniversityContext -o Models
@@ -32,7 +32,7 @@ dotnet tool install -g Duotify.EFCore.EntityPartialGenerator
 
     > This command will build existing project first. Only buildable project can generate partial classes.
 
-    Show generating files 
+    Show generating files
 
     ```sh
     efp generate -c ContosoUniversityContext -o Models -v
@@ -54,4 +54,3 @@ dotnet tool install -g Duotify.EFCore.EntityPartialGenerator
     dotnet pack -c Release
     dotnet nuget push bin\Release\Duotify.EFCore.EntityPartialGenerator.1.3.0.nupkg --api-key YourApiKeyFromNuGetOrg --source https://api.nuget.org/v3/index.json
     ```
-

@@ -243,9 +243,12 @@ namespace Duotify.EFCore.EntityPartialGenerator
         /// <param name="force"></param>
         private void CreateFiles(IEnumerable<Type> types, string output, bool force)
         {
-            var outputDir = string.IsNullOrWhiteSpace(output)
-                ? Path.Combine(Directory.GetCurrentDirectory(), "Models")
-                : Path.Combine(Directory.GetCurrentDirectory(), output);
+            if (string.IsNullOrWhiteSpace(output))
+            {
+                output = "Models";
+            }
+
+            var outputDir = Path.Combine(Directory.GetCurrentDirectory(), output);
 
             if (!Directory.Exists(outputDir))
             {
