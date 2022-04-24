@@ -301,7 +301,10 @@ namespace Duotify.EFCore.EntityPartialGenerator
             }
             catch (ReflectionTypeLoadException e)
             {
-                return e.Types.Where(t => t != null && t.BaseType.FullName.Contains(Resources.DbContextFullName));
+                // TODO: 可以考慮改用 t.IsSubclassOf(typeof(DbContext)); 判斷
+                return e.Types.Where(t => {
+                    return t != null && t.BaseType != null && t.BaseType.FullName.Contains(Resources.DbContextFullName);
+                });
             }
         }
 
